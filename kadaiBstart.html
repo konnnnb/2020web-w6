@@ -31,6 +31,11 @@
       transform: scale(0.9);
       background: yellow;
     }
+    
+    .lose2 {
+      transform: scale(0.9);
+      background: green;
+    }
   </style>
 </head>
 <body>
@@ -41,6 +46,7 @@
     const num = 10;
     const winner = Math.floor(Math.random() * num); // 0 - 9
     var array = ['中吉','小吉','凶'];
+    var array1 = ['lose','lose1','lose2'];
     
 
     for (let i = 0; i < num; i++) {
@@ -55,7 +61,8 @@
           div.classList.add('win');
         } else {
           div.textContent = array[Math.floor(Math.random() * array.length)];
-          div.classList.add('lose1');
+          //div.classList.add('lose1');
+          div.classList.add(array1[Math.floor(Math.random() * array1.length)]);
         }
       });
 
