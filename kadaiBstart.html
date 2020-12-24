@@ -26,6 +26,11 @@
     .lose {
       transform: scale(0.9);
     }
+    
+    .lose1 {
+      transform: scale(0.9);
+      background: yellow;
+    }
   </style>
 </head>
 <body>
@@ -35,7 +40,7 @@
 
     const num = 10;
     const winner = Math.floor(Math.random() * num); // 0 - 9
-    var array = ['大吉','中吉','小吉','凶'];
+    var array = ['中吉','小吉','凶'];
     
 
     for (let i = 0; i < num; i++) {
@@ -43,15 +48,15 @@
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-        div.textContent = Math.floor(Math.random() * array.length);
-        div.classList.add(Math.floor(Math.random() * array.length));
-//         if (i === winner) {
-//           div.textContent = 'Win!';
-//           div.classList.add('win');
-//         } else {
-//           div.textContent = 'Lose!';
-//           div.classList.add('lose');
-//         }
+//         div.textContent = Math.floor(Math.random() * array.length);
+//         div.classList.add(Math.floor(Math.random() * array.length));
+        if (i === winner) {
+          div.textContent = '大吉';
+          div.classList.add('win');
+        } else {
+          div.textContent = array[Math.floor(Math.random() * array.length)];
+          div.classList.add('lose1');
+        }
       });
 
       document.body.appendChild(div);
